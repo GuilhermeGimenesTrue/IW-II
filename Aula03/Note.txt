@@ -1,0 +1,139 @@
+Aula 03
+Exemplo 01
+
+<Head>
+<script>
+
+</script>
+
+<script src="___"></srcipt>
+
+let - a variavel let deixa a variavel num escopo local, sem asseso global.
+
+EX: 
+
+var x = 10;
+var y = 5;
+if(x > y){
+          let z = 5;
+        }
+console.log(z);
+
+
+Nesse exemplo, let está num escopo local dentro do if, o que não permite o ascesso dela fora do if, falhando
+o código. Portanto, aqui esta a versão corrigida
+
+
+var x = 10;
+        var y = 5;
+        if(x > y){
+            let z = 5;
+            console.log(z);
+        }
+
+Nessa versão, o console funciona.
+
+
+___________________________________________________________________________________________________________________
+
+
+Outra caracteristica do let é a sua capacidade de limitar o que o define.
+
+Ex:
+
+let x = 10;
+let x = 5;
+console.log(x);
+
+No caso, o programa quebra devido a sua caracteristica de definição. Portanto o let não deve se redefinir, 
+impedindo redefinições acidentais.
+
+Obs: Essas caracteristicas também se aplicam ao const
+
+___________________________________________________________________________________________________________________
+
+Métodos de Interação
+
+Alert - 1 Botão
+
+Confirm - 2 Botões
+
+Prompt - Texto e 1 botão
+
+Alert
+
+O alert só aparece 1 vez e depois de clicado ele some, a  unica forma de reaparecer é se um recarregar a página
+
+Ex:
+
+var nome = "Yep";
+alert("Bom dia " + nome);
+
+Gera um Alert com a frase "Bom dia Yep"
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+Confirm
+
+O codigo confirm permite a criação de opção dupla, dando um output booleano.
+
+Ex:
+
+var opção = confirm("Tem certeza que quer excluir?");
+console.log(opcao);
+
+if (opcao){
+	alert("VERDADEIRO");
+}else{
+	alert("FALSO");
+}
+
+No caso, é criado um confirm, caso ok ele manda verdadeiro, caso cancel ele manda falso.
+
+No caso o resultado é passado para o console e após isso por um if, o if já considera o verdadeiro ou falso,
+porém é melhor definilo com == true.
+
+Caso verdadeiro ele cria um alert com o texto "VERDADEIRO", caso falso "FALSO"
+
+-------------------------------------------------------------------------------------------------------------------
+
+Prompt
+
+No prompt, é dado uma caixa de texto que armazena qualquer texto como string.
+
+Ex:
+
+var nome = prompt("Digite o seu nome: ");
+console.log(typeof(nome));
+
+console.log("Seu nome é " + nome);
+
+No caso, o codigo detecta o texto digitado e o imprime em no console.
+
+Um problema é que a variacel é uma string, portanto contas se complicam, porém, a uma forma de resolver esse
+problema.
+
+var nome = prompt("Digite o seu nome: ");
+
+var n1 = parseFloat(prompt("Digite N1: "));
+var n2 = parseFloat(prompt("Digite N2: "));
+
+var soma = n1 + n2;
+
+alert("Olá " + nome +  "\n, A soma é : " + soma);
+
+Nesse caso, nós transicionamos o n1 de String pra Float com o parse.
+
+-------------------------------------------------------------------------------------------------------------------
+
+Exercicios:
+
+1. Exiba uma mensagem de boas-vindas ao usuário utilizando alert.
+2. Pergunte ao usuário seu nome usando prompt e exiba um alerta com a resposta.
+3. Pergunte ao usuário sua idade usando prompt e exiba no console se ele é maior ou menor de idade.
+4. Crie um confirm perguntando se o usuário deseja prosseguir e mostre uma mensagem de acordo com a resposta.
+5. Declare duas variáveis numéricas com let e peça ao usuário dois números via prompt, depois exiba a soma.
+6. Peça ao usuário para digitar um número e exiba o dobro dele usando alert.
+7. Crie um script que pergunte o nome e a idade do usuário e exiba uma mensagem personalizada com as informações
+fornecidas.
